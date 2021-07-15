@@ -15,6 +15,7 @@ equalsButton.addEventListener('click', evaluate);
 deleteButton.addEventListener('click', deleteNumber);
 allClearButton.addEventListener('click', allClear);
 pointButton.addEventListener('click', addPoint);
+window.addEventListener('keydown', keyboardInput);
 
 numberButtons.forEach((button) => {
     button.addEventListener('click', () => appendNumber(button.textContent))
@@ -77,6 +78,24 @@ function evaluate() {
 
 function roundOff(number) {
     return Math.round(number * 1000) / 1000;
+}
+
+function keyboardInput(e) {
+    if (e.key === 'Backspace') deleteNumber();
+    else if (e.key === 'Shift') allClear();
+    else if (e.key >= 0 || e.key <= 9) appendNumber(e.key);
+    else if (e.key === '=' || e.key === 'Enter') evaluate();
+    else if (e.key === 'x' || e.key === '*' || e.key === '+' ||
+    e.key === '/' || e.key === '-') {
+        setOperation(keyboardOperatorConvert(e.key));
+    }
+}
+
+function keyboardOperatorConvert(operator) {
+    if (operator === 'x' || operator === '*') return '×';
+    else if (operator === '/') return '÷';
+    else if (operator === '+') return '+';
+    else if (operator === '-') return '-';
 }
 
 //* Calculator Logic
