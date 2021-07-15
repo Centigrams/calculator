@@ -81,7 +81,7 @@ function roundOff(number) {
 }
 
 function keyboardInput(e) {
-    if (e.key === 'Backspace') deleteNumber();
+    if (e.key === 'Backspace' || e.code === 'NumpadDecimal') deleteNumber();
     else if (e.key === 'Shift') allClear();
     else if (e.key >= 0 || e.key <= 9) appendNumber(e.key);
     else if (e.key === '=' || e.key === 'Enter') evaluate();
