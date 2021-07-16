@@ -41,21 +41,12 @@ body {
     background-color: #797777;
 }
 
-.all-clear {
+.light-gray {
     background-color: #D4D4D2;
-    font-family: Helvetica;
+    font-family: Helvetica; 
 }
 
-.all-clear:hover {
-    background-color: #f0f0ec;
-}
-
-.delete {
-    background-color: #D4D4D2;
-    font-family: Helvetica;
-}
-
-.delete:hover {
+.light-gray:hover {
     background-color: #f0f0ec;
 }
 
