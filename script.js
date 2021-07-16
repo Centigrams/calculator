@@ -97,8 +97,7 @@ function keyboardInput(e) {
     else if (e.key >= 0 || e.key <= 9) appendNumber(e.key);
     else if (e.key === '=' || e.key === 'Enter') evaluate();
     else if (e.key === '.' || e.code === 'NumpadDecimal') addPoint();
-    else if (e.key === 'x' || e.key === '*' || e.key === '+' ||
-    e.key === '/' || e.key === '-') {
+    else if (e.key === 'x' || e.key === '*' || e.key === '+' || e.key === '/' || e.key === '-') {
         setOperation(keyboardOperatorConvert(e.key));
     }
     //! Placing this above <if (e.shiftKey) {}> will repeat percent conversion.
