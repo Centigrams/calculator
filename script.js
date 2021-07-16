@@ -5,6 +5,7 @@ const allClearButton = document.querySelector('[data-all-clear]');
 const equalsButton = document.querySelector('[data-equals]');
 const pointButton = document.querySelector('[data-point]');
 const output = document.querySelector('[data-output]');
+const percentButton = document.querySelector('[data-percent]');
 
 let canResetOutput = false;
 let currentOperation = null;
@@ -15,6 +16,7 @@ equalsButton.addEventListener('click', evaluate);
 deleteButton.addEventListener('click', deleteNumber);
 allClearButton.addEventListener('click', allClear);
 pointButton.addEventListener('click', addPoint);
+percentButton.addEventListener('click', percentToDecimal);
 window.addEventListener('keydown', keyboardInput);
 
 numberButtons.forEach((button) => {
@@ -57,6 +59,10 @@ function addPoint() {
     }
 }
 
+function percentToDecimal() {
+    output.textContent = output.textContent / 100;
+}
+
 function setOperation(operator) {
     if (currentOperation !== null) evaluate();
     firstOperand = output.textContent;
@@ -77,7 +83,7 @@ function evaluate() {
 }
 
 function roundOff(number) {
-    return Math.round(number * 1000) / 1000;
+    return Math.round(number * 100000) / 100000;
 }
 
 function keyboardInput(e) {
@@ -93,7 +99,10 @@ function keyboardInput(e) {
     if (e.shiftKey) {
         if (e.key === '+') setOperation(keyboardOperatorConvert('+'));
         else if (e.key === '*') setOperation(keyboardOperatorConvert(e.key));
+        else if (e.key === '%') percentToDecimal();
     }
+    //! Placing this above <if (e.shiftKey) {}> will repeat percent conversion.
+    else if (e.key === '%') percentToDecimal();
 }
 
 function keyboardOperatorConvert(operator) {
