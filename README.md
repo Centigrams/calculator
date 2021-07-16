@@ -8,4 +8,4 @@ Supports basic operations while having the ability to chain multiple
 operations like a real calculator.
 
 
-Keyboard functionality designed particularly with the numpad.
+Supports keyboard input.
