@@ -9,3 +9,6 @@ operations like a real calculator.
 
 
 Supports keyboard input.
+
+
+Dark mode!
