@@ -1,168 +1,192 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-family: Helvetica;
-    font-weight: normal;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  font-weight: normal;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: var(--bg-color);
-    color: var(--font-color);
-    margin: 0 auto;
-    transition: background 0.3s ease;
-  }
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  margin: 0 auto;
+  transition: background 0.3s ease;
+}
 
 .main-calculator {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100%;
+  grid-template-columns: repeat(4, 7.25rem);
+  grid-template-rows: minmax(8.5rem, auto) repeat(5, 7.25rem);
 }
 
 .main-calculator > button {
-    cursor: pointer;
-    font-size: 2rem;
-    border: 1px solid white;
-    outline: none;
-    font-family: Helvetica;
-    border: 1px solid  var(--output-border-color);
-    transition: background 0.3s ease;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  font-family: Helvetica;
+  border: 1px solid var(--output-border-color);
+  transition: background 0.3s ease;
 }
 
 .spanned {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .number-buttons {
-    background-color: #505050;
-    color: white;
-    font-family: Helvetica;
+  background-color: #505050;
+  color: white;
+  font-family: Helvetica;
 }
 
 .number-buttons:hover {
-    background-color: #797777;
+  background-color: #797777;
 }
 
 .light-gray {
-    background-color: #D4D4D2;
-    font-family: Helvetica;
+  background-color: #d4d4d2;
+  font-family: Helvetica;
 }
 
 .light-gray:hover {
-    background-color: #f0f0ec;
+  background-color: #f0f0ec;
 }
 
 .operators {
-    background-color: #FF9500;
-    color: white;
-    font-family: Helvetica;
+  background-color: #ff9500;
+  color: white;
+  font-family: Helvetica;
 }
 
 .operators:hover {
-    background-color: #ffbb00;
+  background-color: #ffbb00;
 }
 
 .equals {
-    background-color: #FF9500;
-    color: white;
-    font-family: Helvetica;
+  background-color: #ff9500;
+  color: white;
+  font-family: Helvetica;
 }
 
 .equals:hover {
-    background-color: #ffbb00;
+  background-color: #ffbb00;
 }
 
 .output {
-    grid-column: 1 / -1;
-    background: var(--output-border-color);
-    /* opacity: 0.7; */
-    display: flex;
-    align-items: flex-end;
-    justify-content:flex-end;
-    padding: 10px;
-    color: white;
-    font-size: 30px;
-    word-wrap: break-word;
-    word-break: break-all;
-    font-family: Helvetica;
-    transition: background 0.3s ease;
+  grid-column: 1 / -1;
+  background: var(--output-border-color);
+  /* opacity: 0.7; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.625rem;
+  color: white;
+  font-size: 1.875rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-family: Helvetica;
+  transition: background 0.3s ease;
 }
 
 /*Light/Dark mode*/
 
 [data-theme="dark"] {
-    --font-color: #e1e1ff;
-    --bg-color: #161625;
-    --output-border-color: #000000;
+  --font-color: #e1e1ff;
+  --bg-color: #161625;
+  --output-border-color: #000000;
 }
 
 /* Default theme */
 [data-theme="light"] {
-    --bg-color: #4cb0b8;
-    --output-border-color: #1f1f1f;
+  --bg-color: #4cb0b8;
+  --output-border-color: #1f1f1f;
 }
 
 .theme-switch-wrapper {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 0.625rem;
+  margin-top: 0.625rem;
 }
 
 .theme-switch {
-    display: inline-block;
-    height: 34px;
-    position: relative;
-    width: 60px;
+  display: inline-block;
+  height: 2.125rem;
+  position: relative;
+  width: 3.75rem;
 }
-  
+
 .theme-switch input {
-    display:none;
+  display: none;
 }
 
 .em-message {
-    margin-left: 10px;
-    font-size: 1rem;
-    font-family: sans-serif;
+  margin-left: 0.625rem;
+  font-size: 1rem;
+  font-family: sans-serif;
 }
-  
+
 .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
 }
-  
+
 .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
+  background-color: #fff;
+  bottom: 0.25rem;
+  content: "";
+  height: 1.625rem;
+  left: 0.25rem;
+  position: absolute;
+  transition: 0.4s;
+  width: 1.625rem;
 }
-  
+
 input:checked + .slider {
-    background-color: #66bb6a;
+  background-color: #66bb6a;
 }
-  
+
 input:checked + .slider:before {
-    transform: translateX(26px);
+  transform: translateX(1.625rem);
 }
-  
+
 .slider.round {
-    border-radius: 34px;
+  border-radius: 2.125rem;
 }
-  
+
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 1366px) {
+  .main-calculator {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100%;
+    grid-template-columns: repeat(4, 6rem);
+    grid-template-rows: minmax(7.25rem, auto) repeat(5, 6rem);
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  .main-calculator {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 70rem;
+    grid-template-columns: repeat(4, 8rem);
+    grid-template-rows: minmax(9.25rem, auto) repeat(5, 8rem);
+  }
 }
