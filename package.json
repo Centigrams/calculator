@@ -1,0 +1,27 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "This project is under The Odin Project's curriculum which can be found in the [foundations section.](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/calculator)",
+  "main": "script.js",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/.bin/eslint script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Centigrams/calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Centigrams/calculator/issues"
+  },
+  "homepage": "https://github.com/Centigrams/calculator#readme"
+}
